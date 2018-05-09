@@ -40,7 +40,7 @@ if __name__ == '__main__':
     ret, eof, info = bucket.list(bucket_name, prefix, marker, limit, delimiter)
     for i in ret['items']:
         img = i['key']
-        img_path = path + img[:img.rindex('/')]
+        img_path = path + img[:img.rfind('/')]
         print(img)
         base_url = url + '/' + img
         # print(base_url)
